@@ -1,25 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+
+import TicProvider from './context/TicProvider';
+
+import Button1 from './components/Button1';
+import Button2 from './components/Button2';
+import Button3 from './components/Button3';
+import Button4 from './components/Button4';
+import Button5 from './components/Button5';
+import Button6 from './components/Button6';
+import Button7 from './components/Button7';
+import Button8 from './components/Button8';
+import Button9 from './components/Button9';
+import Finish from './components/Finish';
+import Restart from './components/Restart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <h1>Tic Tac Toe</h1>
+      <div className="container">
+        <TicProvider>
+          <div className="finished">
+            <Finish />
+          </div>
+          <div className="container-button">
+            <Button1 />
+            <Button2 />
+            <Button3 />
+            <Button4 />
+            <Button5 />
+            <Button6 />
+            <Button7 />
+            <Button8 />
+            <Button9 />
+          </div>
+          <div className="container-reset">
+            <Restart />
+          </div>
+        </TicProvider>
+      </div>
+    </Fragment>
   );
 }
 
